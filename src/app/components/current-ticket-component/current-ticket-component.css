@@ -1,0 +1,104 @@
+.content-ticket {
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+
+    h1 {
+        font-size: 25px;
+    }
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+        display: flex;
+        height: 40px;
+        width: 80px;
+        align-items: center;
+        justify-content: center;
+        background-color: #0606ca;
+        border-radius: 15px;
+        font-size: 18px;
+    }
+}
+
+.ticket-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .details {
+        display: flex;
+        gap: 10px;
+    }
+
+    img {
+        width: 50px;
+        padding: 10px;
+        border-radius: 50px;
+        background-color: #0606ca;
+    }
+
+    h2 {
+        color: #5e6573;
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}
+
+.value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    margin: 15px;
+    padding: 17px;
+    border-radius: 10px;
+    background-color: #182949;
+}
+
+.value .price {
+    h1 {
+        color: #2a2af3;
+    }
+
+    h2 {
+        color: #5e6573;
+        font-size: 18px;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 98%;
+    height: 50px;
+    color: white;
+    font-size: 17px;
+    background-color: #0606ca;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: .8s;
+}
+
+.btn:hover {
+    background-color: #0000e4;
+}

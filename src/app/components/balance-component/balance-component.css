@@ -1,0 +1,88 @@
+.content-balance {
+    height: 260px;
+}
+
+.balance {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0606ca;
+    padding: 30px;
+    border-radius: 0px 0px 35px 35px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: white;
+}
+
+.info .wrap p {
+    color: #ece8e8;
+}
+
+.balance .visible .btn-eye {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.balance .visible img {
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    background-color: #0606ca;
+    cursor: pointer;
+}
+
+.contente-card {
+    max-width: 1280px;
+    width: 90%;
+}
+
+.wrapper {
+    height: 220px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-content: center;
+    padding: 15px;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.title-section {
+    margin-left: 10px;
+}
+
+.wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.cards {
+    background-color: #0606ca;
+    border-radius: 8px;
+    width: 350px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 8px;
+    gap: 30px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.cards:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,45 @@
+<section>
+    <div class="content-balance">
+        <div class="balance">
+            <div class="info">
+                <div class="wrap">
+                    <h2>Olá, João</h2>
+                    <p>Seu saldo disponível</p>
+                </div>
+                <div class="wrap">
+                    @if(visible == true) {
+                    <h1>R$ 90,50</h1>
+                    } @else {
+                    <h1>R$ ******</h1>
+                    }
+                    <p>Estacionamento UNINASSAU</p>
+                </div>
+            </div>
+
+            <div class="visible">
+                @if(visible == true) {
+                <img src="eye-visible.svg" (click)="visibleBalance()" alt="eye">
+                } @else {
+                <img src="eye-slash.svg" (click)="visibleBalance()" alt="eye">
+                }
+            </div>
+        </div>
+    </div>
+    <div class="content-card">
+        <div class="title-section">
+            <h1>Cartões Pré-pagos</h1>
+        </div>
+        <div class="wrapper">
+            <div class="cards" (click)="cardNavegation()">
+                <h1>cartão principal</h1>
+                <h2>R$ 25,00</h2>
+                <h3>**** **** **** 1234</h3>
+            </div>
+            <div class="cards" (click)="cardNavegation()">
+                <h1>cartão principal</h1>
+                <h2>R$ 25,00</h2>
+                <h3>**** **** **** 1234</h3>
+            </div>
+        </div>
+    </div>
+</section>
