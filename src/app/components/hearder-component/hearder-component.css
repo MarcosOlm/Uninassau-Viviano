@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem .8rem;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.menu:hover {
+    background-color: blue;
+}

@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 1rem;
+    min-height: 80vh;
+    height: fit-content;
+    padding: 10px;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.filter > button {
+    padding: 5px 15px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.filter > button:hover {
+    background-color: blue;
+}
+
+.ticket-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.tickect {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: .5rem;
+    width: 100%;
+    padding: 15px;
+}
+
+.location-value {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.date-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.hour-id-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
