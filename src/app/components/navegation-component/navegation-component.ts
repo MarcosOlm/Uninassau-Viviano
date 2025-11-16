@@ -18,4 +18,8 @@ profileNavegation(): void {
 historyNavegation(): void {
   this.router.navigate(['/history']);
 }
+
+homeNavegation() {
+  this.router.navigate(['']);
+}
 }

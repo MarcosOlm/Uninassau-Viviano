@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './hearder-component.css',
 })
 export class HearderComponent {
+  visible = true;
 
+
+  invisibleBalance() {
+  if(this.visible === true){
+    this.visible = false
+  } else {
+    this.visible = true
+  }
+}
 }

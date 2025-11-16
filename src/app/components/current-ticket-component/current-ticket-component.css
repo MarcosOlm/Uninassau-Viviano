@@ -26,7 +26,7 @@
         width: 80px;
         align-items: center;
         justify-content: center;
-        background-color: #0606ca;
+        background: linear-gradient(to right, #09991f, #0dba27);
         border-radius: 15px;
         font-size: 18px;
     }
@@ -46,7 +46,7 @@
         width: 50px;
         padding: 10px;
         border-radius: 50px;
-        background-color: #0606ca;
+        background: #0f7cf1;
     }
 
     h2 {
@@ -59,6 +59,10 @@
     }
 }
 
+.details:last-child img {
+    background-color: #0bb833;
+}
+
 .value {
     display: flex;
     justify-content: space-between;
@@ -67,12 +71,12 @@
     margin: 15px;
     padding: 17px;
     border-radius: 10px;
-    background-color: #182949;
+    background-color: #0b1643;
 }
 
 .value .price {
     h1 {
-        color: #2a2af3;
+        color: #1536cc;
     }
 
     h2 {
@@ -82,17 +86,17 @@
 }
 
 .wrapper {
-    width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .btn {
-    width: 98%;
+    margin: 15px;
+    width: 100%;
     height: 50px;
     color: white;
     font-size: 17px;
-    background-color: #0606ca;
+    background: #0f7cf1;
     border-radius: 10px;
     cursor: pointer;
     border: none;
@@ -100,5 +104,5 @@
 }
 
 .btn:hover {
-    background-color: #0000e4;
+    background: #0d6bcf;
 }

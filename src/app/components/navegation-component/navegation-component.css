@@ -1,8 +1,13 @@
 .container {
+    height: 70px;
     display: flex;
     align-self: center;
     justify-content: center;
     padding: .1rem;
+    position: fixed;
+    bottom: 0;
+    background-color: #0d1529;
+    z-index: 1000;
 }
 
 ul {
@@ -19,11 +24,7 @@ a {
     justify-content: center;
     gap: 4px;
     padding: 10px;
-}
-
-a:hover {
-    background-color: blue;
-    border-radius: 6px;
+    cursor: pointer;
 }
 
 svg {

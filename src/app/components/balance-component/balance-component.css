@@ -5,7 +5,7 @@
 .balance {
     display: flex;
     justify-content: space-between;
-    background-color: #0606ca;
+    background: #0f7cf1;
     padding: 30px;
     border-radius: 0px 0px 35px 35px;
 }
@@ -24,7 +24,7 @@
 }
 
 .info .wrap p {
-    color: #ece8e8;
+    color: #cbc8c8;
 }
 
 .balance .visible .btn-eye {
@@ -42,7 +42,7 @@
     width: 30px;
     margin: 0;
     padding: 0;
-    background-color: #0606ca;
+    background-color: transparent;
     cursor: pointer;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .cards {
-    background-color: #0606ca;
+    background: #0f62f1;
     border-radius: 8px;
     width: 350px;
     height: 180px;
@@ -81,8 +81,23 @@
     gap: 30px;
     transition: .5s;
     cursor: pointer;
+
+    .plus-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        width: 50px;
+    }
+}
+
+.cards:last-child {
+    background-color: transparent;
+    border: 3px dashed #ccc;
 }
 
 .cards:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }

@@ -23,4 +23,8 @@ visibleBalance() {
 cardNavegation() {
   this.router.navigate(['/card']);
 }
+
+pulsCardNavegation() {
+  this.router.navigate(['/plus-card']);
+}
 }

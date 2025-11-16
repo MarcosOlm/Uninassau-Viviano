@@ -6,7 +6,37 @@
     gap: 1rem;
     min-height: 80vh;
     height: fit-content;
-    padding: 10px;
+    position: relative;
+    top: 50px;
+
+    .title {
+        width: 100%;
+        height: 200px;
+        z-index: 0;
+        position: absolute;
+        top: -50px;
+        background: #0f7cf1;
+        padding: 30px;
+        border-radius: 0px 0px 35px 35px;
+    }
+
+    .content {
+        z-index: 1;
+        position: relative;
+        width: 96%;
+        top: 30px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 1rem;
+    }
+}
+
+.wrap {
+    width: 97vw;
+    display: flex;
+    justify-content: center;
 }
 
 .filter {
@@ -20,59 +50,22 @@
 .filter > button {
     padding: 5px 15px;
     color: white;
-    background-color: transparent;
-    border: 1px solid #ccc;
+    width: 150px;                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    height: 40px;
+    border: none;
+    background-color: #0859af;
     border-radius: 6px;
+    font-size: 17px;
     cursor: pointer;
+    transition: .5s;
 }
 
 .filter > button:hover {
-    background-color: blue;
+    background-color: #064f9e;
+    border: 1px solid #ccc;
 }
 
-.ticket-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    gap: 1.5rem;
-    width: 100%;
-}
-
-.tickect {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    gap: .5rem;
-    width: 100%;
-    padding: 15px;
-}
-
-.location-value {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.date-status {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.hour-id-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.text {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+.filter > button.ativo {
+    background-color: #022d5a;
+    border: 1px solid #ccc;
 }

@@ -3,17 +3,15 @@
 }
 
 .top-info {
-    width: 500px;
-    height: 50px;
-    position: relative;
-    left: 25px;
+    height: 70px;
     display: flex;
     gap: 20px;
+    border-bottom: 1px solid #ccc;
 
     h1 {
         position: relative;
-        top: 7px;
-    }
+        top: 17px;
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 
     img {
         width: 30px;
@@ -32,7 +30,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 15px;
-        background-color: #0606ca;
+        background: #0f7cf1;
         height: 200px;
         width: 90%;
         border-radius: 10px;
@@ -79,8 +77,16 @@
     }
 
     label {
-        font-size: 18px;
+        font-size: 25px;
     }
+}
+
+.wrap input {
+    font-size: 18px;
+}
+
+.wrap input:placeholder-shown {
+    font-size: 18px;
 }
 
 .recharge-options {
@@ -104,7 +110,7 @@
 }
 
 .recharge-options .option-recharge:hover {
-    background-color: #14d537;
+    background-color: #16db51;
     border: none;
 }
 
@@ -116,7 +122,7 @@
     input {
         height: 45px;
         padding: 5px;
-        background-color: #111318;
+        background-color: #16191e;
         border: 1px solid #ccc;
         border-radius: 5px;
         color: white;
@@ -134,15 +140,15 @@
         height: 40px;
         border-radius: 5px;
         font-size: 18px;
-        background-color: #0606ca;
+        background: #0f7cf1;
         color: white;
         border: none;
         cursor: pointer;
-        transition: .2s;
+        transition: .5s;
     }
 
     .btn:hover {
-        background-color: #0000e4;
+        background: #0d6bcf;
     }
 }
 
@@ -190,4 +196,8 @@
         flex-direction: column;
         gap: 8px;
     }
+}
+
+.wrap > h1 {
+    font-size: 30px;
 }
