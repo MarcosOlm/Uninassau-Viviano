@@ -43,41 +43,35 @@
         <h1>Forma de Pagamento</h1>
     </div>
     <div class="wrapper">
-        @if (ativo != 1) {
-        <div class="payment-method" (click)="ativoVerification(1)">
-            <img src="credit-card.svg" alt="">
-            <h1>Cartão de Crédito/Débito</h1>
-        </div>
-        } @else {
         <div class="payment-method" [class.ativo]="ativo == 1" (click)="ativoVerification(1)">
-            <img src="credit-card-ativo.svg" alt="">
+            <img [src]="ativo === 1 ? 'credit-card-ativo.svg' : 'credit-card.svg'" />
             <h1>Cartão de Crédito/Débito</h1>
         </div>
-        }
-        @if (ativo != 2) {
-        <div class="payment-method" (click)="ativoVerification(2)">
-            <img src="pix.svg" alt="">
-            <h1>Pix</h1>
-        </div>
-        } @else {       
         <div class="payment-method" [class.ativo]="ativo == 2" (click)="ativoVerification(2)">
-            <img src="pix-ativo.svg" alt="">
+            <img [src]="ativo == 2 ?  'pix-ativo.svg' : 'pix.svg'">
             <h1>Pix</h1>
         </div>
-        }
-        @if (ativo != 3) {
-        <div class="payment-method" (click)="ativoVerification(3)">
-            <img src="credit_card.svg" alt="">
-            <h1>Pagamento com wallet</h1>
+        <div class="payment-method" [class.ativo]="ativo == 3" (click)="ativoVerification(3)">
+            <img [src]="ativo == 3 ? 'credit_card_ativo.svg' : 'credit_card.svg'">
+            <h1>Pagar com cartões</h1>
         </div>
-        } @else {
-        <div class="payment-prepaid-card">
-            <div class="payment-method" [class.ativo]="ativo == 3" (click)="ativoVerification(3)">
-                <img src="credit_card_ativo.svg" alt="">
-                <h1>Pagamento com wallet</h1>
+        <div class="choice-options" [class.invisible-options]="ativo != 3" [class.content-prepaid-card]="ativo == 3">
+            <h1>Escolha qual Cartão Pré-pago deseja                                                                                                             </h1>
+            <div>
+                <div class="options-prepaid-card">
+                    <div class="cards">
+                        <h1>cartão principal</h1>
+                        <h2>R$ 25,00</h2>
+                        <h3>**** **** **** 1234</h3>
+                    </div>
+                    <div class="cards">
+                        <h1>cartão principal</h1>
+                        <h2>R$ 25,00</h2>
+                        <h3>**** **** **** 1234</h3>
+                    </div>
+                </div>
             </div>
         </div>
-        }
     </div>
     <div class="confirm-payment">
         <button type="submit" class="btn">

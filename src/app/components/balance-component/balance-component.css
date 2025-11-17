@@ -47,7 +47,6 @@
 }
 
 .contente-card {
-    max-width: 1280px;
     width: 90%;
 }
 
@@ -57,7 +56,7 @@
     grid-template-columns: repeat(5, 1fr);
     align-content: center;
     padding: 15px;
-    gap: 15px;
+    gap: 10px;
     overflow-x: auto;
 }
 
@@ -112,11 +111,11 @@
     display: flex;
     justify-content: space-between;
     width: 90%;
-    height: 83vh;
+    height: 85vh;
     padding: 30px 25px;
     border-radius: 12px;
     position: fixed;
-    bottom: 80px;
+    bottom: 70px;
     background-color: #0b1643;
 
     .request-card-top {

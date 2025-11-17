@@ -33,6 +33,11 @@
     }
 }
 
+.title h1 {
+    position: relative;
+    left: 30px;
+}
+
 .wrap {
     width: 97vw;
     display: flex;
