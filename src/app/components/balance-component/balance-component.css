@@ -70,14 +70,14 @@
 }
 
 .cards {
-    background: #0f62f1;
+    background: rgb(15, 98, 241);
     border-radius: 8px;
     width: 350px;
     height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 8px;
+    padding: 20px;
     gap: 30px;
     transition: .5s;
     cursor: pointer;
