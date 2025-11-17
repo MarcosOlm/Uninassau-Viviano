@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class BalanceComponent {
 visible = false;
+invisible = false;
 
 constructor(private router: Router) {}
 
@@ -17,6 +18,14 @@ visibleBalance() {
     this.visible = false
   } else {
     this.visible = true
+  }
+}
+
+invisibleBalance() {
+  if(this.invisible === true){
+    this.invisible = false
+  } else {
+    this.invisible = true
   }
 }
 

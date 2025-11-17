@@ -2,8 +2,8 @@ import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Profile } from './pages/profile/profile';
 import { Card } from './pages/card/card';
-import { PlusCard } from './pages/plus-card/plus-card';
 import { History } from './pages/history-ticket/history';
+import { PaymentCurrentTicket } from './pages/payment-current-ticket/payment-current-ticket';
 
 export const routes: Routes = [
     {
@@ -19,6 +19,6 @@ export const routes: Routes = [
         path: 'history', component: History
     },
     {
-        path: 'plus-card', component: PlusCard
+        path: 'payment_current_ticket', component: PaymentCurrentTicket
     }
 ];

@@ -1,0 +1,186 @@
+.content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.top-info {
+    height: 70px;
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #ccc;
+
+    h1 {
+        position: relative;
+        top: 17px;
+    }
+
+    img {
+        width: 30px;
+        cursor: pointer;
+    }
+}
+
+.preview-ticket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-ticket-content {
+    width: 95vw;
+    height: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #0b1643;
+
+    .wrap {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .details {
+        display: flex;
+        gap: 10px;
+    }
+
+    .space {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: 10px;
+    }
+
+    img {
+        width: 50px;
+        padding: 10px;
+        border-radius: 50px;
+        background: #0f7cf1;
+    }
+
+    h2 {
+        color: #5e6573;
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+
+    .details:last-child img {
+        background-color: #0bb833;
+    }
+}
+
+.preview-ticket-content .space {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 10px;
+
+    h3 {
+        position: relative;
+        top: 5px;
+    }
+}
+
+.value {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+.value .price {
+    h1 {
+        color: #1536cc;
+    }
+
+    h2 {
+        color: #5e6573;
+        font-size: 18px;
+    }
+}
+
+.payment-method-title {
+    padding: 30px;
+}
+
+.wrapper {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.payment-method {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    width: 92%;
+    font-size: 12px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    transition: .5s;
+    cursor: pointer;
+
+    h1 {
+        position: relative;
+        top: 12px;
+    }
+
+    img {
+        width: 50px;
+    }
+}
+
+.payment-method:hover {
+    border: 2px solid #1692d1;
+}
+
+.payment-method.ativo {
+    border: 2px solid #1692d1;
+    color: #1692d1;
+}
+
+.confirm-payment {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    margin: 15px;
+    width: 92%;
+    height: 60px;
+    color: white;
+    font-size: 20px;
+    background: #0f7cf1;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: .8s;
+}
+
+.btn:hover {
+    background: #0d6bcf;
+}
+
+.payment-prepaid-card {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

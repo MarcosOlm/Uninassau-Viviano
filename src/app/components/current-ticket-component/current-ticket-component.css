@@ -57,11 +57,12 @@
     h1 {
         font-size: 25px;
     }
+    
+    .details:last-child img {
+        background-color: #0bb833;
+    }
 }
 
-.details:last-child img {
-    background-color: #0bb833;
-}
 
 .value {
     display: flex;

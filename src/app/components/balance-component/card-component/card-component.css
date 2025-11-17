@@ -120,12 +120,13 @@
     gap: 8px;
 
     input {
-        height: 45px;
-        padding: 5px;
-        background-color: #16191e;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        background-color: #0c1b53;
         color: white;
+        height: 50px;
+        font-size: 18px;
+        padding: 0 12px;
+        border-radius: 12px;
+        border: none;
     }
 }
 
