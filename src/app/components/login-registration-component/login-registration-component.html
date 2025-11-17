@@ -1,0 +1,6 @@
+@if (isLogin) {
+    <app-login-component (isLogin)="isLoginModeReceive($event)"></app-login-component>
+}
+@else {
+    <app-registration-component (isLogin)="isLoginModeReceive($event)"></app-registration-component>
+}
