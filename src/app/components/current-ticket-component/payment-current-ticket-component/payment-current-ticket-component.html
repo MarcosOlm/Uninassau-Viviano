@@ -44,7 +44,7 @@
     </div>
     <div class="wrapper">
         <div class="payment-method" [class.ativo]="ativo == 1" (click)="ativoVerification(1)">
-            <img [src]="ativo === 1 ? 'credit-card-ativo.svg' : 'credit-card.svg'" />
+            <img [src]="ativo == 1 ? 'credit-card-ativo.svg' : 'credit-card.svg'" />
             <h1>Cartão de Crédito/Débito</h1>
         </div>
         <div class="payment-method" [class.ativo]="ativo == 2" (click)="ativoVerification(2)">
@@ -55,8 +55,8 @@
             <img [src]="ativo == 3 ? 'credit_card_ativo.svg' : 'credit_card.svg'">
             <h1>Pagar com cartões</h1>
         </div>
-        <div class="choice-options" [class.invisible-options]="ativo != 3" [class.content-prepaid-card]="ativo == 3">
-            <h1>Escolha qual Cartão Pré-pago deseja                                                                                                             </h1>
+        <div class="choice-options" [class.content-prepaid-card]="ativo == 3">
+            <h1>Escolha qual Cartão Pré-pago deseja</h1>
             <div>
                 <div class="options-prepaid-card">
                     <div class="cards">

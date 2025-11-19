@@ -36,4 +36,8 @@ cardNavegation() {
 pulsCardNavegation() {
   this.router.navigate(['/plus-card']);
 }
+
+cardSolicitationNavegation() {
+  this.router.navigate(['/card_solicitation']);
+}
 }

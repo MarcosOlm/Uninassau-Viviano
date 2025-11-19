@@ -50,60 +50,9 @@
                 <h2>R$ 25,00</h2>
                 <h3>**** **** **** 1234</h3>
             </div>
-            <div class="cards" (click)="invisibleBalance()">
+            <div class="cards" (click)="invisibleBalance()" (click)="cardSolicitationNavegation()">
                 <div class="plus-card"><img src="plus.svg" alt="puls"></div>
             </div>
         </div>
-        @if(invisible == true) {
-        <div class="request">
-            <div class="content-request">
-                <div class="space">
-                    <div class="request-card-top">
-                        <h1>Solicitar cartão</h1>
-                        <img src="delete.svg" (click)="invisibleBalance()" alt="eye">
-                    </div>
-                    <div class="info">
-                        <div class="card-to-request">
-                            <div class="wrap">
-                                <h2>Olá, João</h2>
-                                <p>Seu saldo disponível</p>
-                            </div>
-                            <div class="wrap">
-                                <h1>R$ 90,50</h1>
-                                <p>Estacionamento UNINASSAU</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="holder">
-                        <label>Nome do Titular do Cartão</label>
-                        <input type="text">
-                    </div>
-                    <div class="holder">
-                        <label>Tipo do Cartão</label>
-                        <input type="text">
-                    </div>
-                    <div class="holder">
-                        <label>Valor Inicial</label>
-                        <input type="number" placeholder="R$ 99,99">
-                    </div>
-                    <div class="recharge-options">
-                        <div class="option-recharge">
-                            <h1>+ R$ 10</h1>
-                        </div>
-                        <div class="option-recharge">
-                            <h1>+ R$ 25</h1>
-                        </div>
-                        <div class="option-recharge">
-                            <h1>+ R$ 50</h1>
-                        </div>
-                    </div>
-                    <div class="recharge">
-                        <button type="submit" class="btn">Solicitar Cartão</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        } @else {
-        }
     </div>
 </section>

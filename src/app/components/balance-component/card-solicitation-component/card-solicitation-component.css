@@ -1,0 +1,140 @@
+.top-info {
+    height: 55px;
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #ccc;
+
+    h1 {
+        position: relative;
+        top: 10px;
+        font-size: 28px;
+    }
+
+    img {
+        width: 30px;
+        cursor: pointer;
+    }
+}
+
+.request {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;                                         
+    gap: 40px;
+}
+
+.content-request{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .space {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+
+    .info {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-to-request {
+        width: 90vw;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #0f7cf1;
+        border-radius: 12px;
+    }
+
+}
+
+.content-request .holder {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    label {
+        font-size: 20px;
+    }
+
+    input {
+        background-color: #0c1b53;
+        color: white;
+        height: 50px;
+        font-size: 18px;
+        padding: 0 12px;
+        border-radius: 12px;
+        border: none;
+    }
+}
+
+
+.recharge-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.recharge-options .option-recharge {
+    width: 30%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.recharge-options .option-recharge:hover {
+    background-color: #16db51;
+    border: none;
+}
+
+
+.recharge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+    .btn {
+        width: 95%;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 18px;
+        background: #0f7cf1;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    .btn:hover {
+        background: #0d6bcf;
+    }
+}
+
+@media (min-width: 1280px) {
+    .content-request .card-to-request{
+        width: 80vw;
+        height: 200px;
+        gap: 50px;
+    }
+
+    .content-request .space {
+        width: 80vw;
+    }
+}
