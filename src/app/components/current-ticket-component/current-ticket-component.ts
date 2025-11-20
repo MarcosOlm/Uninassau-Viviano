@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-current-ticket-component',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class CurrentTicketComponent {
 
+  constructor(private router: Router) {}
+
+  paymentCurrentTicketNavegation() {
+    this.router.navigate(['payment_current_ticket']);
+  }
 }

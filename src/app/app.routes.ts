@@ -4,6 +4,8 @@ import { Profile } from './pages/profile/profile';
 import { Card } from './pages/card/card';
 import { History } from './pages/history-ticket/history';
 import { LoginRegistration } from './pages/login-registration/login-registration';
+import { PaymentCurrentTicket } from './pages/payment-current-ticket/payment-current-ticket';
+import { CardSolicitation } from './pages/card-solicitation/card-solicitation';
 
 export const routes: Routes = [
     {
@@ -20,5 +22,11 @@ export const routes: Routes = [
     },
     {
         path: 'login-registration', component: LoginRegistration
+    },
+    {
+        path: 'payment_current_ticket', component: PaymentCurrentTicket
+    },
+    {
+        path: 'card_solicitation', component: CardSolicitation
     }
 ];

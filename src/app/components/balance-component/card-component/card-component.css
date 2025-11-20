@@ -3,15 +3,16 @@
 }
 
 .top-info {
-    height: 70px;
+    height: 55px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     border-bottom: 1px solid #ccc;
 
     h1 {
         position: relative;
-        top: 17px;
-    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+        top: 10px;
+        font-size: 28px;
+    }
 
     img {
         width: 30px;
@@ -41,13 +42,14 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    font-size: 13px;
 }
 
 .calendar {
     display: flex;
     gap: 6px;
     position: relative;
-    top: 40px;
+    top: 65px;
 
     img {
         width: 30px;
@@ -65,7 +67,7 @@
     justify-content: center;
     align-items: center;
 
-    .wrap {
+    .wrapper {
         width: 90%;
         height: 350px;
         display: flex;
@@ -81,11 +83,11 @@
     }
 }
 
-.wrap input {
+.wrapper input {
     font-size: 18px;
 }
 
-.wrap input:placeholder-shown {
+.wrapper input:placeholder-shown {
     font-size: 18px;
 }
 
@@ -106,7 +108,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .recharge-options .option-recharge:hover {
@@ -120,12 +122,13 @@
     gap: 8px;
 
     input {
-        height: 45px;
-        padding: 5px;
-        background-color: #16191e;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        background-color: #0c1b53;
         color: white;
+        height: 50px;
+        font-size: 18px;
+        padding: 0 12px;
+        border-radius: 12px;
+        border: none;
     }
 }
 
@@ -157,7 +160,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     .wrap {
         width: 90%;
         height: 350px;
@@ -181,16 +184,16 @@
     }
 
     .recent-transactions h1 {
-        font-size: 18px;
+        font-size: 22px;
     }
-    
+
     .recent-transactions h2 {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .values {
         position: relative;
-        bottom: 10px;
+        bottom: 15px;
         height: 50px;
         display: flex;
         flex-direction: column;
@@ -199,5 +202,13 @@
 }
 
 .wrap > h1 {
-    font-size: 30px;
+    font-size: 25px;
+}
+
+@media (max-width: 1280px) {
+    .wrap > h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
 }

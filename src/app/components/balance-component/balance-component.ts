@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class BalanceComponent {
 visible = false;
+invisible = false;
 
 constructor(private router: Router) {}
 
@@ -20,11 +21,23 @@ visibleBalance() {
   }
 }
 
+invisibleBalance() {
+  if(this.invisible === true){
+    this.invisible = false
+  } else {
+    this.invisible = true
+  }
+}
+
 cardNavegation() {
   this.router.navigate(['/card']);
 }
 
 pulsCardNavegation() {
   this.router.navigate(['/plus-card']);
+}
+
+cardSolicitationNavegation() {
+  this.router.navigate(['/card_solicitation']);
 }
 }

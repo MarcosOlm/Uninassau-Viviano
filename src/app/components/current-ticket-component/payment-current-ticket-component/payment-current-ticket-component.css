@@ -1,0 +1,249 @@
+.content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.top-info {
+    height: 55px;
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #ccc;
+
+    h1 {
+        position: relative;
+        top: 10px;
+        font-size: 28px;
+    }
+
+    img {
+        width: 30px;
+        cursor: pointer;
+    }
+}
+
+.preview-ticket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-ticket-content {
+    width: 95vw;
+    height: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #0b1643;
+
+    .wrap {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .details {
+        display: flex;
+        gap: 5px;
+    }
+
+    img {
+        width: 50px;
+        padding: 10px;
+        border-radius: 50px;
+        background: #0f7cf1;
+    }
+
+    h2 {
+        color: #5e6573;
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+
+    .details:last-child img {
+        background-color: #0bb833;
+    }
+}
+
+.details .space {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+}
+
+.preview-ticket-content .space {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 10px;
+
+    h3 {
+        position: relative;
+        top: 5px;
+    }
+}
+
+.value {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+.value .price {
+    h1 {
+        color: #1536cc;
+    }
+
+    h2 {
+        color: #5e6573;
+        font-size: 18px;
+    }
+}
+
+.payment-method-title {
+    padding: 20px;
+    font-size: 15px;
+}
+
+.wrapper {
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.payment-method {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    width: 92%;
+    font-size: 12px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    transition: .5s;
+    cursor: pointer;
+
+    h1 {
+        position: relative;
+        top: 16px;
+        font-size: 20px;
+    }
+
+    img {
+        width: 50px;
+    }
+}
+
+.payment-method:hover {
+    border: 2px solid #1692d1;
+}
+
+.payment-method.ativo {
+    border: 2px solid #1692d1;
+    color: #1692d1;
+}
+
+.confirm-payment {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    margin: 15px;
+    width: 92%;
+    height: 60px;
+    color: white;
+    font-size: 20px;
+    background: #0f7cf1;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: .8s;
+}
+
+.btn:hover {
+    background: #0d6bcf;
+}
+
+.choice-options {
+    display: none;
+}
+
+.content-prepaid-card {
+    width: 90%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.options-prepaid-card {
+    height: 220px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-content: center;
+    padding: 10px;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.options-prepaid-card::-webkit-scrollbar {
+    display: none;
+}
+
+.cards {
+    background: #0f62f1;
+    border-radius: 8px;
+    width: 350px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+    transition: .5s;
+    cursor: pointer;
+
+    .plus-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        width: 50px;
+    }
+}
+
+.cards:hover {
+    transform: scale(1.03);
+}
+
+@media (min-width: 1280px) {
+    .payment-method-title {
+        width: 500px;
+        position: relative;
+        left: 30px;
+    }
+}

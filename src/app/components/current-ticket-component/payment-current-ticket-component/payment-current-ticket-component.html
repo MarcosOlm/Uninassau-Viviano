@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="content">
+        <div class="top-info">
+            <img src="arrow-left.svg" alt="" (click)="homeNavegation()">
+            <h1>Pagamento de Ticket</h1>
+        </div>
+        <div class="preview-ticket">
+            <div class="preview-ticket-content">
+                <div class="wrap">
+                    <div class="details">
+                        <img src="clock.svg" alt="timer">
+                        <div class="space">
+                            <h2>Entrada</h2>
+                            <h3>08:30</h3>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <img src="calendar.svg" alt="">
+                        <div class="space">
+                            <h2>Data</h2>
+                            <h3>25/10/2025</h3>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <img src="location.svg" alt="">
+                        <div class="space">
+                            <h2>Localização</h2>
+                            <h3>UNINASSAU - JP</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="value">
+                    <div class="price">
+                        <h2>Valor Atual</h2>
+                        <h1>R$ 4,50</h1>
+                    </div>
+                    <p>ID: TK2024-001234</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="payment-method-title">
+        <h1>Forma de Pagamento</h1>
+    </div>
+    <div class="wrapper">
+        <div class="payment-method" [class.ativo]="ativo == 1" (click)="ativoVerification(1)">
+            <img [src]="ativo == 1 ? 'credit-card-ativo.svg' : 'credit-card.svg'" />
+            <h1>Cartão de Crédito/Débito</h1>
+        </div>
+        <div class="payment-method" [class.ativo]="ativo == 2" (click)="ativoVerification(2)">
+            <img [src]="ativo == 2 ?  'pix-ativo.svg' : 'pix.svg'">
+            <h1>Pix</h1>
+        </div>
+        <div class="payment-method" [class.ativo]="ativo == 3" (click)="ativoVerification(3)">
+            <img [src]="ativo == 3 ? 'credit_card_ativo.svg' : 'credit_card.svg'">
+            <h1>Pagar com cartões</h1>
+        </div>
+        <div class="choice-options" [class.content-prepaid-card]="ativo == 3">
+            <h1>Escolha qual Cartão Pré-pago deseja</h1>
+            <div>
+                <div class="options-prepaid-card">
+                    <div class="cards">
+                        <h1>cartão principal</h1>
+                        <h2>R$ 25,00</h2>
+                        <h3>**** **** **** 1234</h3>
+                    </div>
+                    <div class="cards">
+                        <h1>cartão principal</h1>
+                        <h2>R$ 25,00</h2>
+                        <h3>**** **** **** 1234</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="confirm-payment">
+        <button type="submit" class="btn">
+            Confirmar Pagamento
+        </button>
+    </div>
+</div>
