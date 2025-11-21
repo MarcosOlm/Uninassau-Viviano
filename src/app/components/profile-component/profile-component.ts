@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-profile-component',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class ProfileComponent {
 
+  constructor (private auth: AuthService) {}
+
+  logoutUser() {
+    this.auth.logout();
+  }
 }

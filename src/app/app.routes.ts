@@ -21,12 +21,12 @@ export const routes: Routes = [
         path: 'history', component: History
     },
     {
-        path: 'login-registration', component: LoginRegistration
-    },
-    {
         path: 'payment_current_ticket', component: PaymentCurrentTicket
     },
     {
         path: 'card_solicitation', component: CardSolicitation
+    },
+    {
+        path: 'login-registration', component: LoginRegistration
     }
 ];

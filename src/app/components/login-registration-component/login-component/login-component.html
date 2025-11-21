@@ -4,18 +4,18 @@
             <h1>UNINASSAU</h1>
             <p>Estacionamento Inteligente</p>
         </div>
-        <form>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="text-wrap">
                 <h1>Login</h1>
                 <p>Entre com suas credenciais</p>
             </div>
             <div class="form-content">
                 <label for="matricula">Matrícula</label>
-                <input type="number" id="matricula">
+                <input type="text" id="matricula" formControlName="Matricula">
             </div>
             <div class="form-content">
                 <label for="senha">Senha</label>
-                <input type="password" id="senha">
+                <input type="password" id="senha" formControlName="Senha">
                 <button type="button" (click)="isLoginMode()" class="go-to">Não tem conta?</button>
             </div>
             <button type="submit" class="submit">Entrar</button>
