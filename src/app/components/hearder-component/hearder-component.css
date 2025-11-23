@@ -28,6 +28,10 @@ h1 {
     border-radius: 6px;
     background-color: transparent;
     cursor: pointer;
+
+    img {
+        height: 24px;
+    }
 }
 
 .menu:hover {
