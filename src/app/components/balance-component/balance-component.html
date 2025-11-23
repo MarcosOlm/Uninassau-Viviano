@@ -3,12 +3,12 @@
         <div class="balance">
             <div class="info">
                 <div class="wrap">
-                    <h2>Olá, João</h2>
+                    <h2>Olá, {{nome}}</h2>
                     <p>Seu saldo disponível</p>
                 </div>
                 <div class="wrap">
                     @if(visible == true) {
-                    <h1>R$ 90,50</h1>
+                    <h1>R$ {{balance}}</h1>
                     } @else {
                     <h1>R$ ******</h1>
                     }
@@ -25,34 +25,10 @@
             </div>
         </div>
     </div>
+    <div class="title-section">
+        <h1>Cartões Pré-pagos</h1>
+    </div>
     <div class="content-card">
-        <div class="title-section">
-            <h1>Cartões Pré-pagos</h1>
-        </div>
-        <div class="wrapper">
-            <div class="cards" (click)="cardNavegation()">
-                <h1>cartão principal</h1>
-                <h2>R$ 25,00</h2>
-                <h3>**** **** **** 1234</h3>
-            </div>
-            <div class="cards" (click)="cardNavegation()">
-                <h1>cartão principal</h1>
-                <h2>R$ 25,00</h2>
-                <h3>**** **** **** 1234</h3>
-            </div>
-            <div class="cards" (click)="cardNavegation()">
-                <h1>cartão principal</h1>
-                <h2>R$ 25,00</h2>
-                <h3>**** **** **** 1234</h3>
-            </div>
-            <div class="cards" (click)="cardNavegation()">
-                <h1>cartão principal</h1>
-                <h2>R$ 25,00</h2>
-                <h3>**** **** **** 1234</h3>
-            </div>
-            <div class="cards" (click)="invisibleBalance()" (click)="cardSolicitationNavegation()">
-                <div class="plus-card"><img src="plus.svg" alt="puls"></div>
-            </div>
-        </div>
+        <app-carousel-component></app-carousel-component>
     </div>
 </section>

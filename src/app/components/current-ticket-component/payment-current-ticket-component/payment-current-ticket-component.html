@@ -56,26 +56,18 @@
             <h1>Pagar com cartões</h1>
         </div>
         <div class="choice-options" [class.content-prepaid-card]="ativo == 3">
+            @if (carouselLength) {
             <h1>Escolha qual Cartão Pré-pago deseja</h1>
             <div>
-                <div class="options-prepaid-card">
-                    <div class="cards">
-                        <h1>cartão principal</h1>
-                        <h2>R$ 25,00</h2>
-                        <h3>**** **** **** 1234</h3>
-                    </div>
-                    <div class="cards">
-                        <h1>cartão principal</h1>
-                        <h2>R$ 25,00</h2>
-                        <h3>**** **** **** 1234</h3>
-                    </div>
-                </div>
+                <app-carousel-component (arrayLength)="arrayLength($event)"></app-carousel-component>
             </div>
+            } @else {
+            <h1>Solicite um de nossos cartões</h1>
+            }
+        </div>
+        <div class="confirm-payment">
+            <button type="submit" class="btn">
+                Confirmar Pagamento
+            </button>
         </div>
     </div>
-    <div class="confirm-payment">
-        <button type="submit" class="btn">
-            Confirmar Pagamento
-        </button>
-    </div>
-</div>

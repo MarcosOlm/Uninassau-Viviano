@@ -45,22 +45,6 @@
     font-size: 13px;
 }
 
-.calendar {
-    display: flex;
-    gap: 6px;
-    position: relative;
-    top: 65px;
-
-    img {
-        width: 30px;
-    }
-
-    p {
-        position: relative;
-        top: 7px;
-    }
-}
-
 .card-recharge {
     height: 350px;
     display: flex;

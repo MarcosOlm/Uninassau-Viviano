@@ -1,17 +1,23 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { BalanceService } from '../../services/balance-service';
+import { CarouselComponent } from "./carousel-component/carousel-component";
 
 @Component({
   selector: 'app-balance-component',
-  imports: [],
+  imports: [CarouselComponent],
   templateUrl: './balance-component.html',
-  styleUrl: './balance-component.css'
+  styleUrl: './balance-component.css' 
 })
-export class BalanceComponent {
+export class BalanceComponent{
 visible = false;
-invisible = false;
+nome!: string;
+balance!: number;
 
-constructor(private router: Router) {}
+constructor(private router: Router, private user: BalanceService) {
+  this.getName();
+  this.getBalance();
+}
 
 visibleBalance() {
   if(this.visible === true){
@@ -21,23 +27,11 @@ visibleBalance() {
   }
 }
 
-invisibleBalance() {
-  if(this.invisible === true){
-    this.invisible = false
-  } else {
-    this.invisible = true
-  }
+getName(): void {
+  this.user.searchUser().subscribe((user) => this.nome = user.Nome);
 }
 
-cardNavegation() {
-  this.router.navigate(['/card']);
-}
-
-pulsCardNavegation() {
-  this.router.navigate(['/plus-card']);
-}
-
-cardSolicitationNavegation() {
-  this.router.navigate(['/card_solicitation']);
+getBalance(): void {
+  this.user.searchBalance().subscribe((user) => this.balance = user.Saldo);
 }
 }

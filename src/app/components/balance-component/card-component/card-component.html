@@ -8,41 +8,39 @@
         <div class="card-content">
             <div class="card">
                 <div class="card-info">
-                    <h1>cartão principal</h1>
-                    <h2>R$ 25,00</h2>
-                    <h3>**** **** **** 1234</h3>
-                </div>
-                <div class="calendar">
-                    <img src="calendar.svg" alt="">
-                    <p>2024</p>
+                    <h1>cartão {{cardType}}</h1>
+                    <h2>R$ {{balance}}</h2>
+                    <h3>{{cardNumber}}</h3>
                 </div>
             </div>
         </div>
 
 
-        <div class="card-recharge">
-            <div class="wrapper">
-                <h1>Recargar Cartão</h1>
-                <div class="recharge-choice">
-                    <label for="Valor">Valor da recarga</label>
-                    <input type="number" placeholder="R$ 99,99">
-                </div>
-                <div class="recharge-options">
-                    <div class="option-recharge">
-                        <h1>+ R$ 10</h1>
+        <form [formGroup]="form" (ngSubmit)="onSumit()">
+            <div class="card-recharge">
+                <div class="wrapper">
+                    <h1>Recargar Cartão</h1>
+                    <div class="recharge-choice">
+                        <label for="Valor">Valor da recarga</label>
+                        <input type="number" placeholder="R$ 99,99" formControlName="Valor">
                     </div>
-                    <div class="option-recharge">
-                        <h1>+ R$ 25</h1>
+                    <div class="recharge-options">
+                        <div class="option-recharge" (click)="addValue(10)">
+                            <h1>+ R$ 10</h1>
+                        </div>
+                        <div class="option-recharge" (click)="addValue(25)">
+                            <h1>+ R$ 25</h1>
+                        </div>
+                        <div class="option-recharge" (click)="addValue(50)">
+                            <h1>+ R$ 50</h1>
+                        </div>
                     </div>
-                    <div class="option-recharge">
-                        <h1>+ R$ 50</h1>
+                    <div class="recharge">
+                        <button type="submit" class="btn">Recarregar</button>
                     </div>
-                </div>
-                <div class="recharge">
-                    <button type="submit" class="btn">Recarregar</button>
                 </div>
             </div>
-        </div>
+        </form>
 
         <div class="transactions">
             <div class="wrap">

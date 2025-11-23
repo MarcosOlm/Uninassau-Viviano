@@ -34,6 +34,11 @@ export class AuthService {
     return auth ? auth.token : null;
   }
 
+  getUserId(): number | null{
+    const auth = this.storageService.get<tokenData>('auth');
+    return auth ? auth.id : null;
+  }
+
   isValidToken(): boolean {
     const auth = this.storageService.get<tokenData>('auth');
     if (!auth){

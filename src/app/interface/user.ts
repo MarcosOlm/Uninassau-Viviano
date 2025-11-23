@@ -22,3 +22,16 @@ export interface userLoginResponse {
     Liberacao: boolean;
     Id: number;
 }
+
+export interface user {
+    Nome: string;
+    Tipo: string;
+    Status: string;
+    Email: string;
+    Matricula: string;
+    
+}
+
+export interface userBalance {
+    Saldo: number;
+}

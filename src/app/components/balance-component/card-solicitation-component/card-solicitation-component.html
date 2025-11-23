@@ -8,42 +8,44 @@
         <div class="info">
             <div class="card-to-request">
                 <div class="wrap">
-                    <h2>Olá, João</h2>
+                    <h2>Olá, {{nome}}</h2>
                     <p>Seu saldo disponível</p>
                 </div>
                 <div class="wrap">
-                    <h1>R$ 90,50</h1>
+                    <h1>R$ {{balance}}</h1>
                     <p>Estacionamento UNINASSAU</p>
                 </div>
             </div>
         </div>
-        <div class="space">
-            <div class="holder">
-                <label>Nome do Titular do Cartão</label>
-                <input type="text">
-            </div>
-            <div class="holder">
-                <label>Tipo do Cartão</label>
-                <input type="text">
-            </div>
-            <div class="holder">
-                <label>Valor Inicial</label>
-                <input type="number" placeholder="R$ 99,99">
-            </div>
-            <div class="recharge-options">
-                <div class="option-recharge">
-                    <h1>+ R$ 10</h1>
+        <form [formGroup]="form" (ngSubmit)="onSumbit()" class="form">
+                <div class="space">
+                    <div class="holder">
+                        <label>Tipo do Cartão</label>
+                        <select class="select" formControlName="Tipo">
+                            <option value="Comum">Comum</option>
+                            <option value="Estudante">Estudante</option>
+                            <option value="Premium">Premium</option>
+                        </select>
+                    </div>
+                    <div class="holder">
+                        <label>Valor Inicial</label>
+                        <input type="number" placeholder="R$ 99,99" formControlName="ValorInicial">
+                    </div>
+                    <div class="recharge-options">
+                        <div class="option-recharge" (click)="addValue(10)">
+                            <h1>+ R$ 10</h1>
+                        </div>
+                        <div class="option-recharge" (click)="addValue(25)">
+                            <h1>+ R$ 25</h1>
+                        </div>
+                        <div class="option-recharge" (click)="addValue(50)">
+                            <h1>+ R$ 50</h1>
+                        </div>
+                    </div>
+                    <div class="recharge">
+                        <button type="submit" class="btn">Solicitar Cartão</button>
+                    </div>
                 </div>
-                <div class="option-recharge">
-                    <h1>+ R$ 25</h1>
-                </div>
-                <div class="option-recharge">
-                    <h1>+ R$ 50</h1>
-                </div>
-            </div>
-            <div class="recharge">
-                <button type="submit" class="btn">Solicitar Cartão</button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
