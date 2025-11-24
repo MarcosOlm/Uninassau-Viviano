@@ -164,3 +164,44 @@ form {
     background: #0f62f1;
     color: white;
 }
+
+@media (max-height: 1000px) {
+
+    form {
+        gap: 2rem;
+
+        .form-content input {
+            height: 28px;
+        }
+    }
+}
+
+@media (max-height: 860px) {
+    .brand > h1 {
+        font-size: 40px;
+    }
+
+    .brand > p {
+        font-size: 20px;
+    }
+
+    form {
+        gap: .5rem;
+
+        .form-content label {
+            font-size: 18px;
+        }
+
+        .form-content input {
+            height: 28px;
+        }
+    }
+
+    .text-wrap h1 {
+        font-size: 30px;
+    }
+
+    .text-wrap p {
+        font-size: 18px;
+    }
+}

@@ -38,7 +38,8 @@ form {
     justify-content: center;
     gap: 3rem;
     min-width: 60%;
-    height: 600px;
+    height: fit-content;
+    max-height: 80vh;
     padding: 2rem;
     background-color: #0b0f1c;;
     border: 1px solid #ccc;
@@ -96,4 +97,34 @@ form {
     cursor: pointer;
     background: #0f62f1;
     color: white;
+}
+
+@media (max-height: 860px) {
+    .brand > h1 {
+        font-size: 40px;
+    }
+
+    .brand > p {
+        font-size: 20px;
+    }
+
+    form {
+        gap: 2.5rem;
+
+        .form-content label {
+            font-size: 18px;
+        }
+
+        .form-content input {
+            height: 28px;
+        }
+    }
+
+    .text-wrap h1 {
+        font-size: 30px;
+    }
+
+    .text-wrap p {
+        font-size: 18px;
+    }
 }
