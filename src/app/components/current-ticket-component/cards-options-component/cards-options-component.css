@@ -1,8 +1,8 @@
 .wrapper {
-    height: 220px;
+    height: 250px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    align-content: center;
+    align-content: end;
     padding: 15px;
     gap: 10px;
     overflow-x: auto;
@@ -48,13 +48,8 @@
     }
 }
 
-.cards:last-child {
-    background-color: transparent;
-    border: 3px dashed #ccc;
-}
-
-.cards:hover {
-    transform: scale(1.02);
+.cards.ativo {
+    transform: translateY(-30px);
 }
 
 .hidden {

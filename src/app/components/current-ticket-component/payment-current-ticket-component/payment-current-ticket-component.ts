@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CarouselComponent } from "../../balance-component/carousel-component/carousel-component";
+import { CardsOptionsComponent } from "../cards-options-component/cards-options-component";
 
 @Component({
   selector: 'app-payment-current-ticket-component',
-  imports: [CarouselComponent],
+  imports: [CardsOptionsComponent],
   templateUrl: './payment-current-ticket-component.html',
   styleUrl: './payment-current-ticket-component.css',
 })

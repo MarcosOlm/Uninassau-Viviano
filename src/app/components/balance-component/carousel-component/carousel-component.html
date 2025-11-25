@@ -1,6 +1,7 @@
 <div class="wrapper">
     @for (item of cards; track $index) {
-        <div class="cards" (click)="cardNavegation(item.Id)">
+        <div class="cards" (click)="cardNavegation(item.Id)" [class.premium]="item.Tipo == 'Premium'"
+        [class.estudante]="item.Tipo == 'Estudante'" [class.comum]="item.Tipo == 'Comum'">
             <h1>Cartão {{item.Tipo}}</h1>
             <h2>R$ {{item.Saldo}}</h2>
             <h3>{{item.NumeroCard}}</h3>

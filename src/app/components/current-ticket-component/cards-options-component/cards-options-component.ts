@@ -1,28 +1,20 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardService } from '../../../services/card-service';
 
 @Component({
-  selector: 'app-carousel-component',
+  selector: 'app-cards-options-component',
   imports: [],
-  templateUrl: './carousel-component.html',
-  styleUrl: './carousel-component.css',
+  templateUrl: './cards-options-component.html',
+  styleUrl: './cards-options-component.css',
 })
-export class CarouselComponent {
+export class CardsOptionsComponent {
 
   cards: any[] = [];
-  @Output() arrayLength = new EventEmitter<number>();
+  cardId!: number;
 
   constructor(private router: Router, private cardService: CardService) {
     this.getAllCards();
-  }
-
-  cardNavegation(id: number) {
-    this.router.navigate(['/card', id]);
-  }
-
-  cardSolicitationNavegation() {
-  this.router.navigate(['/card_solicitation']);
   }
 
   getAllCards(): void {
@@ -30,8 +22,11 @@ export class CarouselComponent {
       next: (cards) => {
         this.cards = [...cards.Cartoes]
         this.cards = this.cards.sort((a, b) => a.Tipo.localeCompare(b.Tipo));
-        this.arrayLength.emit(this.cards.length);
     }
     });
+  }
+
+  getIdCard(cardId: number) {
+    this.cardId = cardId;
   }
 }
