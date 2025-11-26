@@ -6,7 +6,8 @@
         </div>
 
         <div class="card-content">
-            <div class="card">
+            <div class="card" [class.premium]="cardType == 'Premium'"
+        [class.estudante]="cardType == 'Estudante'" [class.comum]="cardType == 'Comum'">
                 <div class="card-info">
                     <h1>cartão {{cardType}}</h1>
                     <h2>R$ {{balance}}</h2>
