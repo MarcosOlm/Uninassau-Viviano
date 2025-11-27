@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardService } from '../../../services/card-service';
 
@@ -8,12 +8,13 @@ import { CardService } from '../../../services/card-service';
   templateUrl: './carousel-component.html',
   styleUrl: './carousel-component.css',
 })
-export class CarouselComponent {
+export class CarouselComponent implements OnInit{
 
   cards: any[] = [];
   @Output() arrayLength = new EventEmitter<number>();
 
-  constructor(private router: Router, private cardService: CardService) {
+  constructor(private router: Router, private cardService: CardService) {}
+  ngOnInit(): void {
     this.getAllCards();
   }
 

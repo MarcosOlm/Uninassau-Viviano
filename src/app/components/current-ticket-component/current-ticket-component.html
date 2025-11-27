@@ -1,5 +1,23 @@
 <section>
-    <div class="content-ticket">
+    @if (!currentTicketExist) {
+        <div class="wrap">
+            <div class="status">
+                <h1>Ticket Atual</h1>
+            </div>
+            <div class="no-ticket">
+                <div class="no-current-ticket">
+                    <div>
+                        <img src="ticket-solid-full.svg" alt="">
+                    </div>
+                    <h1>Nenhum Ticket Ativo</h1>
+                    <p>Você não possui um ticket de estacionamento ativo no momento.</p>
+                    <button type="button" (click)="createTicket(idUser)">Gerar Novo Ticket</button>
+                </div>
+            </div>
+        </div>
+    }
+    @else {
+        <div class="content-ticket">
         <div class="wrap">
             <div class="status">
                 <h1>Ticket Atual</h1>
@@ -10,14 +28,14 @@
                     <img src="clock.svg" alt="timer">
                     <div class="space">
                         <h2>Entrada</h2>
-                        <h3>08:30</h3>
+                        <h3> {{ date }} </h3>
                     </div>
                 </div>
                 <div class="details">
                     <img src="calendar.svg" alt="">
                     <div class="space">
                         <h2>Data</h2>
-                        <h3>25/10/2025</h3>
+                        <h3> {{ `${timeNow.getDate()}/${timeNow.getMonth()}/${timeNow.getFullYear()}` }} </h3>
                     </div>
                 </div>
                 <div class="details">
@@ -32,12 +50,13 @@
         <div class="value">
             <div class="price">
                 <h2>Valor Atual</h2>
-                <h1>R$ 4,50</h1>
+                <h1> R$ {{ price}} </h1>
             </div>
-            <p>ID: TK2024-001234</p>
+            <p>ID: {{codeTicket}} </p>
         </div>
         <div class="wrapper">
             <button class="btn" (click)="paymentCurrentTicketNavegation()">Pagar Ticket</button>
         </div>
     </div>
+    }
 </section>
