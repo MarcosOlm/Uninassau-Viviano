@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardService } from '../../../services/card-service';
 
@@ -10,8 +10,9 @@ import { CardService } from '../../../services/card-service';
 })
 export class CardsOptionsComponent {
 
-  cards: any[] = [];
+  @Output() cardIdEmitter = new EventEmitter();
   cardId!: number;
+  cards: any[] = [];
 
   constructor(private router: Router, private cardService: CardService) {
     this.getAllCards();
@@ -28,5 +29,6 @@ export class CardsOptionsComponent {
 
   getIdCard(cardId: number) {
     this.cardId = cardId;
+    this.cardIdEmitter.emit(this.cardId);
   }
 }

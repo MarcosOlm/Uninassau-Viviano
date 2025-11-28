@@ -11,7 +11,6 @@ import { allTicketResponse, currentTicketResponse, ticketGenereteResponse, ticke
   styleUrl: './current-ticket-component.css'
 })
 export class CurrentTicketComponent implements OnInit {
-  idUser!: number | null;
   timeNow = new Date();
   currentTicketExist: boolean = false;
   date!: string | null;
@@ -26,8 +25,8 @@ constructor(private router: Router, private ticketService: TicketService, privat
   }
 
   currentTicketCheck() {
-    this.idUser = this.auth.getUserId();
-    this.ticketService.currentTicketByUser(this.idUser).subscribe({
+    let idUser = this.auth.getUserId();
+    this.ticketService.currentTicketByUser(idUser).subscribe({
       next: (res) => {
         if (res.Ativo) {
           console.log(res)
@@ -60,8 +59,9 @@ constructor(private router: Router, private ticketService: TicketService, privat
     })
   }
 
-  createTicket(user: number | null) {
-    this.ticketService.ticketGenerete(user).subscribe({
+  createTicket() {
+    let idUser = this.auth.getUserId();
+    this.ticketService.ticketGenerete(idUser).subscribe({
       next: (res) => {
         if (res.Sucesso) {
           this.codeTicket = res.Numeracao;

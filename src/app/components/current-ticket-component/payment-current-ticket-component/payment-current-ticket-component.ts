@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardsOptionsComponent } from "../cards-options-component/cards-options-component";
+import { TicketService } from '../../../services/ticket-service';
+import { AuthService } from '../../../services/auth-service';
+import { ticketPayment, ticketVerification } from '../../../interface/ticket';
 
 @Component({
   selector: 'app-payment-current-ticket-component',
@@ -8,12 +11,67 @@ import { CardsOptionsComponent } from "../cards-options-component/cards-options-
   templateUrl: './payment-current-ticket-component.html',
   styleUrl: './payment-current-ticket-component.css',
 })
-export class PaymentCurrentTicketComponent {
-
+export class PaymentCurrentTicketComponent implements OnInit{
   ativo = 0;
   carouselLength: boolean = true;
+  timeNow = new Date();
+  date!: string | null;
+  codeTicket!: number | null;
+  price!: number | null;
+  paymentMethod: string = 'PIX';
+  idCard!: number;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private ticketService: TicketService, private auth: AuthService) {}
+
+  ngOnInit(): void {
+    this.ticketVerification();
+  }
+
+  onSubmit(): void {
+    let payment = {IdCard: this.idCard, CodigoTicket: this.codeTicket, FormaPagamento: this.paymentMethod} as ticketPayment;
+    this.ticketService.ticketPayment(payment).subscribe({
+      next: (res) => {
+        if (res.Sucesso) {
+          this.router.navigate(['/']);
+        }
+        else {
+          alert(res.Resposta);
+        }
+      }
+    });
+  }
+
+  ticketVerification() {
+    let idUser = this.auth.getUserId(); 
+    this.ticketService.currentTicketByUser(idUser).subscribe({
+      next: (res) => {
+        if (res.Ativo) {
+          this.date = res.EmissaoTimeStamp;
+          this.codeTicket = res.CodigoTicket;
+          this.getPrice()
+        }
+      }
+    })
+  }
+
+  getPrice() {
+    const ticketValueVerification = {CodigoTicket: this.codeTicket} as ticketVerification;
+    this.ticketService.ticketVerification(ticketValueVerification).subscribe({
+      next: (res) => {
+        if (res.Sucesso) {
+          this.price = res.Estadia;
+        }
+      }
+    })
+  }
+
+  paymentMethodChange(method: string) {
+    this.paymentMethod = method;
+  }
+
+  idCardCheck($event: number) {
+    this.idCard = $event;
+  }
 
   homeNavegation() {
     this.router.navigate(['']);
