@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardService } from '../../../services/card-service';
 
@@ -8,12 +8,14 @@ import { CardService } from '../../../services/card-service';
   templateUrl: './cards-options-component.html',
   styleUrl: './cards-options-component.css',
 })
-export class CardsOptionsComponent {
+export class CardsOptionsComponent implements OnInit{
 
   cards: any[] = [];
   cardId!: number;
 
-  constructor(private router: Router, private cardService: CardService) {
+  constructor(private router: Router, private cardService: CardService) {}
+
+  ngOnInit(): void {
     this.getAllCards();
   }
 
@@ -28,5 +30,6 @@ export class CardsOptionsComponent {
 
   getIdCard(cardId: number) {
     this.cardId = cardId;
+    console.log(this.cardId);
   }
 }
