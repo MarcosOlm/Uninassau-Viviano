@@ -11,14 +11,14 @@
                         <img src="clock.svg" alt="timer">
                         <div class="space">
                             <h2>Entrada</h2>
-                            <h3>08:30</h3>
+                            <h3> {{date}} </h3>
                         </div>
                     </div>
                     <div class="details">
                         <img src="calendar.svg" alt="">
                         <div class="space">
                             <h2>Data</h2>
-                            <h3>25/10/2025</h3>
+                            <h3> {{ `${timeNow.getDate()}/${timeNow.getMonth()}/${timeNow.getFullYear()}` }} </h3>
                         </div>
                     </div>
                     <div class="details">
@@ -32,9 +32,9 @@
                 <div class="value">
                     <div class="price">
                         <h2>Valor Atual</h2>
-                        <h1>R$ 4,50</h1>
+                        <h1> {{price}} </h1>
                     </div>
-                    <p>ID: TK2024-001234</p>
+                    <p>ID: {{codeTicket}} </p>
                 </div>
             </div>
         </div>
@@ -43,15 +43,15 @@
         <h1>Forma de Pagamento</h1>
     </div>
     <div class="wrapper">
-        <div class="payment-method" [class.ativo]="ativo == 1" (click)="ativoVerification(1)">
+        <div class="payment-method" [class.ativo]="ativo == 1" (click)="ativoVerification(1)" (click)="paymentMethodChange('FKCARD')">
             <img [src]="ativo == 1 ? 'credit-card-ativo.svg' : 'credit-card.svg'" />
             <h1>Cartão de Crédito/Débito</h1>
         </div>
-        <div class="payment-method" [class.ativo]="ativo == 2" (click)="ativoVerification(2)">
+        <div class="payment-method" [class.ativo]="ativo == 2" (click)="ativoVerification(2)" (click)="paymentMethodChange('PIX')">
             <img [src]="ativo == 2 ?  'pix-ativo.svg' : 'pix.svg'">
             <h1>Pix</h1>
         </div>
-        <div class="payment-method" [class.ativo]="ativo == 3" (click)="ativoVerification(3)">
+        <div class="payment-method" [class.ativo]="ativo == 3" (click)="ativoVerification(3)" (click)="paymentMethodChange('PRECARD')">
             <img [src]="ativo == 3 ? 'credit_card_ativo.svg' : 'credit_card.svg'">
             <h1>Pagar com cartões</h1>
         </div>
@@ -59,14 +59,14 @@
             @if (carouselLength) {
             <h1>Escolha qual Cartão Pré-pago deseja</h1>
             <div>
-                <app-cards-options-component></app-cards-options-component>
+                <app-cards-options-component (cardIdEmitter)="idCardCheck($event)"></app-cards-options-component>
             </div>
             } @else {
             <h1>Solicite um de nossos cartões</h1>
             }
         </div>
         <div class="confirm-payment">
-            <button type="submit" class="btn">
+            <button type="submit" class="btn" (click)="onSubmit()">
                 Confirmar Pagamento
             </button>
         </div>

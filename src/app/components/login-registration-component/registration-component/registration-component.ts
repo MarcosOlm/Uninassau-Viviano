@@ -1,13 +1,14 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormGroup, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, ReactiveFormsModule, Validators, FormControl } from '@angular/forms';
 import { userRegistration } from '../../../interface/user';
 import { UserService } from '../../../services/user-service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth-service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registration-component',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './registration-component.html',
   styleUrl: './registration-component.css',
 })
@@ -25,13 +26,32 @@ export class RegistrationComponent implements OnInit{
   seputForm() {
     this.form = this.fb.group({
       Nome: ['', [Validators.required]],
-      Email: ['', [Validators.required]],
-      Matricula: ['', [Validators.required]],
-      Senha: ['', [Validators.required]]
+      Email: ['', [Validators.required, Validators.email]],
+      Matricula: ['', [Validators.required, this.validatorMatricula]],
+      Senha: ['', [Validators.required, this.ValidatorEspacialCharacters, Validators.minLength(6)]]
     });
   }
 
+  ValidatorEspacialCharacters(input: FormControl) {
+    return input.value.indexOf('!') == -1 
+    && input.value.indexOf('@') == -1
+    && input.value.indexOf('#') == -1
+    && input.value.indexOf('$') == -1
+    && input.value.length != 0
+    && input.value.length >= 6
+    ? {espacialCharacters: true} : null  
+  }
+
+  validatorMatricula(input: FormControl) {
+    const value = input.value.toString() || '';
+    return value.length != 0
+    && (value.length < 4
+    || value.length > 4)
+    ? {matricula: true} : null
+  }
+
   onSubmit() {
+    this.form.markAllAsTouched();
     if (this.form.valid) {
       let newUserTemp = this.form.value as userRegistration;
       let newUser = {...newUserTemp, Tipo: this.typeUser, Status: "ATIVO"};

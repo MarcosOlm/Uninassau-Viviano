@@ -127,8 +127,22 @@ form {
         height: 38px;
         border: none;
         border-radius: 10px;
+        padding: 0 10px;
     }
 
+    .form-content input:hover {
+        border: 1px solid #929292;
+    }
+
+    .form-content input:focus-visible {
+        outline: 1px solid #929292;
+        border: none;
+        padding: 0 10px;
+    }
+
+    .form-content input:placeholder-shown {
+        padding: 0 10px;
+    }
 }
 
 .text-wrap h1 {
@@ -163,6 +177,20 @@ form {
     cursor: pointer;
     background: #0f62f1;
     color: white;
+}
+
+/* class erro for input */
+
+.erro {
+    width: 90%;
+    margin-left: 2px;
+    color: red;
+    font-size: 14px;
+}
+
+span {
+    border-left: 2px solid red;
+    padding-left: 5px;
 }
 
 @media (max-height: 1000px) {

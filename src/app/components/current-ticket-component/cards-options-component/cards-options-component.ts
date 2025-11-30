@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { CardService } from '../../../services/card-service';
 
@@ -8,14 +8,13 @@ import { CardService } from '../../../services/card-service';
   templateUrl: './cards-options-component.html',
   styleUrl: './cards-options-component.css',
 })
-export class CardsOptionsComponent implements OnInit{
+export class CardsOptionsComponent {
 
-  cards: any[] = [];
+  @Output() cardIdEmitter = new EventEmitter();
   cardId!: number;
+  cards: any[] = [];
 
-  constructor(private router: Router, private cardService: CardService) {}
-
-  ngOnInit(): void {
+  constructor(private router: Router, private cardService: CardService) {
     this.getAllCards();
   }
 
@@ -30,6 +29,6 @@ export class CardsOptionsComponent implements OnInit{
 
   getIdCard(cardId: number) {
     this.cardId = cardId;
-    console.log(this.cardId);
+    this.cardIdEmitter.emit(this.cardId);
   }
 }

@@ -107,3 +107,37 @@
 .btn:hover {
     background: #0d6bcf;
 }
+
+/* no current ticket */
+
+.no-ticket {
+    background-color: #0b1643;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.no-current-ticket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 400px;
+    text-align: center;
+
+    img {
+        height: 9rem
+    }
+
+    button {
+        width: 85vw;
+        height: 4rem;
+        border: none;
+        border-radius: 16px;
+        background-color: #0d6bcf;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}

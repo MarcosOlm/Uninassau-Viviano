@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { addBalanceCard, card, cardById, creatCard } from '../interface/card';
+import { addBalanceCard, card, cardById, creatCard, historyCardResponse } from '../interface/card';
 import { AuthService } from './auth-service';
 
 @Injectable({
@@ -29,5 +29,9 @@ export class CardService {
 
   alterBalanceCard(carInfo: addBalanceCard): Observable<addBalanceCard> {
     return this.http.put<addBalanceCard>(`${this.url}/addsaldocartao`, carInfo);
+  }
+
+  historyCard(user: number | null): Observable<historyCardResponse> {
+    return this.http.get<historyCardResponse>(`${this.url}/buscarregistrouser/${user}`)
   }
 }
