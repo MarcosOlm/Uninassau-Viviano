@@ -31,18 +31,42 @@
             <div class="form-content">
                 <label for="nome">Nome</label>
                 <input type="text" id="nome" formControlName="Nome">
+                <div class="erro" *ngIf="form.get('Nome')?.errors?.['required'] && form.get('Nome')?.touched">
+                    <span>O nome é obrigatória!</span>
+                </div>
             </div>
             <div class="form-content">
                 <label for="email">Email</label>
                 <input type="email" id="email" formControlName="Email">
+                <div class="erro" *ngIf="form.get('Email')?.errors?.['required'] && form.get('Email')?.touched">
+                    <span>O email é obrigatória!</span>
+                </div>
+                <div class="erro" *ngIf="form.get('Email')?.errors?.['email'] && form.get('Email')?.touched">
+                    <span>Digite um email valido!</span>
+                </div>
             </div>
             <div class="form-content">
                 <label for="matricula">Matrícula</label>
                 <input type="number" id="matricula" formControlName="Matricula">
+                <div class="erro" *ngIf="form.get('Matricula')?.errors?.['required'] && form.get('Matricula')?.touched">
+                    <span>A matrícula é obrigatória!</span>
+                </div>
+                <div class="erro" *ngIf="form.get('Matricula')?.errors?.['matricula'] && form.get('Matricula')?.touched">
+                    <span>A matrícula deve ter 4 digítos!</span>
+                </div>
             </div>
             <div class="form-content">
                 <label for="senha">Senha</label>
                 <input type="password" id="senha" formControlName="Senha">
+                <div class="erro" *ngIf="form.get('Senha')?.errors?.['required'] && form.get('Senha')?.touched">
+                    <span>A senha é obrigatória!</span>
+                </div>
+                <div class="erro" *ngIf="form.get('Senha')?.errors?.['minlength'] && form.get('Senha')?.touched">
+                    <span>A senha deve conter 6 digítos!</span>
+                </div>
+                <div class="erro" *ngIf="form.get('Senha')?.errors?.['espacialCharacters'] && form.get('Senha')?.touched">
+                    <span>A senha deve conter um: ! @ # $</span>
+                </div>
                 <button type="button" (click)="isLoginMode()" class="go-to">Já tem conta? </button>
             </div>
             <button type="submit" class="submit">Entrar</button>

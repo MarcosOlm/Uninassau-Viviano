@@ -1,67 +1,14 @@
 <div class="container">
     <div class="card-wrap">
-        <div class="card">
-            <div class="values">
-                <h1>Pagementos</h1>
-                <h2>14/01/2024</h2>
+        @for (item of historyCardMoviment; track $index) {
+            <div class="card">
+                <div class="values">
+                    <h1>Pagementos e Recargas</h1>
+                    <h2> {{item.DataRegistro}} </h2>
+                    <h2> {{item.HoraRegistro}} </h2>
+                </div>
+                <h2>{{item.Tipo == 'ADDSALDO' ? '+' : '-'}} R${{item.Valor}} </h2>
             </div>
-            <h2>-R$ 4,50</h2>
-        </div>
-        <div class="card">
-            <div class="values">
-                <h1>Pagementos</h1>
-                <h2>14/01/2024</h2>
-            </div>
-            <h2>-R$ 4,50</h2>
-        </div>
-        <div class="card">
-            <div class="values">
-                <h1>Pagementos</h1>
-                <h2>14/01/2024</h2>
-            </div>
-            <h2>-R$ 4,50</h2>
-        </div>
-        <div class="card">
-            <div class="values">
-                <h1>Pagementos</h1>
-                <h2>14/01/2024</h2>
-            </div>
-            <h2>-R$ 4,50</h2>
-        </div>
-        <div class="card">
-            <div class="values">
-                <h1>Pagementos</h1>
-                <h2>14/01/2024</h2>
-            </div>
-            <h2>-R$ 4,50</h2>
-        </div>
-        <div class="card">
-            <div class="values">
-                <h1>Pagementos</h1>
-                <h2>14/01/2024</h2>
-            </div>
-            <h2>-R$ 4,50</h2>
-        </div>
-        <div class="card">
-            <div class="values">
-                <h1>Pagementos</h1>
-                <h2>14/01/2024</h2>
-            </div>
-            <h2>-R$ 4,50</h2>
-        </div>
-        <div class="card">
-            <div class="values">
-                <h1>Pagementos</h1>
-                <h2>14/01/2024</h2>
-            </div>
-            <h2>-R$ 4,50</h2>
-        </div>
-        <div class="card">
-            <div class="values">
-                <h1>Pagementos</h1>
-                <h2>14/01/2024</h2>
-            </div>
-            <h2>-R$ 4,50</h2>
-        </div>
+        }
     </div>
 </div>

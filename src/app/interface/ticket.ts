@@ -14,8 +14,15 @@ export interface currentTicketResponse {
 
 export interface allTicketResponse {
     Resposta: string,
-    Tickets: any,
+    Tickets: allTicket[],
     Sucesso: boolean
+}
+
+export interface allTicket {
+    CodigoTicket: number,
+    EmissaoTimeStamp: string,
+    Ativo: string,
+    DataPagamento: string
 }
 
 export interface ticketVerificationResponse {
@@ -29,13 +36,14 @@ export interface ticketVerification {
     CodigoTicket: number | null
 }
 
+export interface ticketPaymentResponse {
+    Resposta: string,
+    Sucesso: boolean
+}
+
 export interface ticketPayment {
     IdCard: number | null,
     CodigoTicket: number,
     FormaPagamento: string
 }
 
-export interface ticketPaymentResponse {
-    Resposta: string,
-    Sucesso: boolean
-}

@@ -20,7 +20,7 @@ export class TicketService {
     return this.http.get<currentTicketResponse>(`${this.url}/capticketid/${user}`);
   }
 
-  allticketByUser(user: number): Observable<allTicketResponse> {
+  allticketByUser(user: number | null): Observable<allTicketResponse> {
     return this.http.get<allTicketResponse>(`${this.url}/capticketuser/${user}`);
   }
 

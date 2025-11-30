@@ -23,3 +23,16 @@ export interface addBalanceCard {
     IdCard: number,
     Valor: number
 }
+
+export interface historyCardResponse {
+    Resposta: string,
+    Sucesso: boolean,
+    Registro: historyCard[]
+}
+
+export interface historyCard {
+    Tipo: string,
+    Valor: number,
+    HoraRegistro: string,
+    DataRegistro: string
+}

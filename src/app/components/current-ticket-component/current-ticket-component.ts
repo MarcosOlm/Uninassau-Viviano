@@ -54,7 +54,9 @@ constructor(private router: Router, private ticketService: TicketService, privat
           }
         },
         error: (res) => {
-          console.log(res)
+          if (!res.Sucesso) {
+            console.log(res);
+          }
         }
     })
   }
