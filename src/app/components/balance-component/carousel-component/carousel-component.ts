@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { CardService } from '../../../services/card-service';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-carousel-component',
@@ -14,8 +15,10 @@ export class CarouselComponent implements OnInit{
   @Output() arrayLength = new EventEmitter<number>();
 
   constructor(private router: Router, private cardService: CardService) {}
+
   ngOnInit(): void {
     this.getAllCards();
+    this.router.events.pipe(filter(events => events instanceof NavigationEnd)).subscribe(() => this.getAllCards());
   }
 
   cardNavegation(id: number) {
@@ -29,8 +32,10 @@ export class CarouselComponent implements OnInit{
   getAllCards(): void {
     this.cardService.searchAllCards().subscribe({
       next: (cards) => {
-        this.cards = [...cards.Cartoes]
-        this.cards = this.cards.sort((a, b) => a.Tipo.localeCompare(b.Tipo));
+        if (cards.Cartoes != null) {
+          this.cards = [...cards.Cartoes]
+          this.cards = this.cards.sort((a, b) => a.Tipo.localeCompare(b.Tipo));
+        }
         this.arrayLength.emit(this.cards.length);
     }
     });

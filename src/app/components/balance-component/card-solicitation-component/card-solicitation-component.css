@@ -76,10 +76,22 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        background-color: #0f7cf1;
         border-radius: 12px;
+        transition: .5s;
     }
 
+}
+
+.comum {
+    background: rgb(15, 98, 241);
+}
+
+.estudante {
+    background: rgb(12, 224, 58);
+}
+
+.premium {
+    background: rgb(9, 9, 0);
 }
 
 .content-request .holder {

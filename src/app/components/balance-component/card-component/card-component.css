@@ -1,5 +1,8 @@
 .container {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .top-info {
@@ -21,7 +24,6 @@
 }
 
 .card-content {
-    height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,6 +36,18 @@
         height: 200px;
         width: 90%;
         border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 20px;
     }
 }
 
@@ -151,14 +165,12 @@
 }
 
 .transactions {
-    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .wrap {
         width: 90%;
-        height: 350px;
         display: flex;
         flex-direction: column;
         gap: 40px;
@@ -169,7 +181,7 @@
 
     .recent-transactions {
         border: none;
-        height: 100px;
+        height: 60px;
         display: flex;
         justify-content: space-between;
     }

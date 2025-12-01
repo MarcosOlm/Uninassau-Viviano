@@ -10,12 +10,15 @@ import { HistoryCardComponent } from "./history-card-component/history-card-comp
 })
 export class HistoryComponent {
   options: boolean = true;
+  option: string = 'tickets';
 
   ticket() {
     this.options = true;
+    this.option = 'tickets';
   }
 
   card() {
     this.options = false;
+    this.option = 'cartões'
   }
 }

@@ -6,10 +6,10 @@
         </div>
 
         <div class="card-content">
-            <div class="card" [class.premium]="cardType == 'Premium'"
-        [class.estudante]="cardType == 'Estudante'" [class.comum]="cardType == 'Comum'">
+            <div class="card" [class.premium]="cardType == 'Premium'" [class.estudante]="cardType == 'Estudante'"
+                [class.comum]="cardType == 'Comum'">
                 <div class="card-info">
-                    <h1>cartão {{cardType}}</h1>
+                    <h1>Cartão {{cardType}}</h1>
                     <h2>R$ {{balance}}</h2>
                     <h3>{{cardNumber}}</h3>
                 </div>
@@ -44,31 +44,21 @@
         </form>
 
         <div class="transactions">
+            @if (!historyCard) {
+            } @else {
             <div class="wrap">
                 <h1>Transações Recentes</h1>
+                @for (item of historyTransactions; track $index) {
                 <div class="recent-transactions">
                     <div class="values">
-                        <h1>Pagementos</h1>
-                        <h2>14/01/2024</h2>
+                        <h1>{{item.Tipo == 'ADDSALDO' ? 'Recarga' : 'Pagamentos'}}</h1>
+                        <h2> {{item.DataRegistro}} </h2>
                     </div>
-                    <h2>-R$ 4,50</h2>
+                    <h2>{{item.Tipo == 'ADDSALDO' ? '+' : '-'}} R${{item.Valor}} </h2>
                 </div>
-                <div class="recent-transactions">
-                    <div class="values">
-                        <h1>Recarga</h1>
-                        <h2>13/01/2024</h2>
-                    </div>
-                    <h2>+R$ 25,00</h2>
-                </div>
-                <div class="recent-transactions">
-                    <div class="values">
-                        <h1>Pagementos</h1>
-                        <h2>12/01/2024</h2>
-                    </div>
-                    <h2>-R$ 6,75</h2>
-                </div>
-
+                }
             </div>
+            }
         </div>
     </div>
 </section>

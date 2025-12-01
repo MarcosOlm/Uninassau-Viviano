@@ -1,9 +1,22 @@
 <div class="container">
-    <div class="card-wrap">
+    @if (!historyCard) {
+        <div class="card-wrap">
+            <div class="no-history">
+                <div class="wrap">
+                    <h1>Bem-vindo ao Cartão</h1>
+                    <p>Você ainda não tem nenhum gasto registrado ou um cartão</p>
+                    <p>Solicite um cartão pré-pago</p>
+                </div>
+                <button (click)="cardSolicitationNavegation()">Solicite um cartão</button>
+            </div>
+        </div>
+    } 
+    @else { 
+        <div class="card-wrap">
         @for (item of historyCardMoviment; track $index) {
             <div class="card">
                 <div class="values">
-                    <h1>Pagementos e Recargas</h1>
+                    <h1>{{item.Tipo == 'ADDSALDO' ? 'Recarga' : 'Pagamentos'}}</h1>
                     <h2> {{item.DataRegistro}} </h2>
                     <h2> {{item.HoraRegistro}} </h2>
                 </div>
@@ -11,4 +24,6 @@
             </div>
         }
     </div>
+    }
+    
 </div>

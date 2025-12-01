@@ -22,7 +22,8 @@ export interface allTicket {
     CodigoTicket: number,
     EmissaoTimeStamp: string,
     Ativo: string,
-    DataPagamento: string
+    DataPagamento: string,
+    ValorTicket: number
 }
 
 export interface ticketVerificationResponse {

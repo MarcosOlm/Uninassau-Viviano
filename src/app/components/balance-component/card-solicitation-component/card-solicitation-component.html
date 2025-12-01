@@ -4,12 +4,12 @@
         <h1>Solicitar cartão</h1>
     </div>
     <div class="content-request">
-        <h1>Preview do Cartão</h1>
         <div class="info">
-            <div class="card-to-request">
+            <div class="card-to-request" [class.premium]="type == 'Premium'"
+        [class.estudante]="type == 'Estudante'" [class.comum]="type == 'Comum'">
                 <div class="wrap">
                     <h2>Olá, {{nome}}</h2>
-                    <p>Seu saldo disponível</p>
+                    <p>Solicite um novo cartão conosco</p>
                 </div>
                 <div class="wrap">
                     <h1>R$ {{balance}}</h1>
@@ -22,9 +22,9 @@
                     <div class="holder">
                         <label>Tipo do Cartão</label>
                         <select class="select" formControlName="Tipo">
-                            <option value="Comum">Comum</option>
-                            <option value="Estudante">Estudante</option>
-                            <option value="Premium">Premium</option>
+                            <option value="Comum" (click)="alterType('Comum')">Comum</option>
+                            <option value="Estudante" (click)="alterType('Estudante')">Estudante</option>
+                            <option value="Premium" (click)="alterType('Premium')">Premium</option>
                         </select>
                     </div>
                     <div class="holder">

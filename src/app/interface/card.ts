@@ -36,3 +36,9 @@ export interface historyCard {
     HoraRegistro: string,
     DataRegistro: string
 }
+
+export interface historyCardTransactionsReponse {
+    Resposta: string,
+    Sucesso: boolean,
+    Registros: historyCard[]
+}

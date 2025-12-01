@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BalanceService } from '../../services/balance-service';
 import { CarouselComponent } from "./carousel-component/carousel-component";
@@ -9,15 +9,17 @@ import { CarouselComponent } from "./carousel-component/carousel-component";
   templateUrl: './balance-component.html',
   styleUrl: './balance-component.css' 
 })
-export class BalanceComponent{
+export class BalanceComponent implements OnInit{
 visible = false;
 nome!: string;
 balance!: number;
 
-constructor(private router: Router, private user: BalanceService) {
-  this.getName();
-  this.getBalance();
-}
+constructor(private router: Router, private user: BalanceService) {}
+
+  ngOnInit(): void {
+    this.getName();
+    this.getBalance();
+  }
 
 visibleBalance() {
   if(this.visible === true){

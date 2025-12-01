@@ -16,19 +16,18 @@ export class CardSolicitationComponent implements OnInit{
 
   form!: FormGroup;
   nome!: string;
-  balance!: number;
+  balance: number = 0;
+  type: string = 'Comum';
 
   constructor(private router: Router, 
     private fb: FormBuilder, 
     private newCard: CardService, 
     private auth: AuthService,
-    private user: BalanceService) {
-      this.getName();
-      this.getBalance();
-    }
+    private user: BalanceService) {}
 
   ngOnInit(): void {
     this.setupForm();
+    this.getName();
   }
 
   homeNavegation() {
@@ -55,14 +54,16 @@ export class CardSolicitationComponent implements OnInit{
   addValue(value: number) {
     const current = Number(this.form.get('ValorInicial')?.value || 0);
     const newValue = current + value;
+    this.balance = newValue;
     this.form.get('ValorInicial')?.setValue(newValue);
   }
 
   getName(): void {
     this.user.searchUser().subscribe((user) => this.nome = user.Nome);
   }
-
-  getBalance(): void {
-    this.user.searchBalance().subscribe((user) => this.balance = user.Saldo);
+  
+  alterType(type: string) {
+    this.type = type;
   }
+
 }

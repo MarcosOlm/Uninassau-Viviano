@@ -17,11 +17,14 @@ export class CurrentTicketComponent implements OnInit {
   codeTicket!: number | null;
   price!: number | null;
 
-  
-constructor(private router: Router, private ticketService: TicketService, private auth: AuthService) {}
+
+  constructor(private router: Router, private ticketService: TicketService, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.currentTicketCheck();
+    if (this.currentTicketExist) {
+      this.searchPriceForMinute();
+    }
   }
 
   currentTicketCheck() {
@@ -29,7 +32,6 @@ constructor(private router: Router, private ticketService: TicketService, privat
     this.ticketService.currentTicketByUser(idUser).subscribe({
       next: (res) => {
         if (res.Ativo) {
-          console.log(res)
           this.currentTicketExist = true;
           this.date = res.EmissaoTimeStamp;
           this.codeTicket = res.CodigoTicket;
@@ -46,18 +48,18 @@ constructor(private router: Router, private ticketService: TicketService, privat
   }
 
   getPrice() {
-    const ticketValueVerification = {CodigoTicket: this.codeTicket} as ticketVerification;
+    const ticketValueVerification = { CodigoTicket: this.codeTicket } as ticketVerification;
     this.ticketService.ticketVerification(ticketValueVerification).subscribe({
-        next: (res) => {
-          if (res.Sucesso) {
-            this.price = res.Estadia;
-          }
-        },
-        error: (res) => {
-          if (!res.Sucesso) {
-            console.log(res);
-          }
+      next: (res) => {
+        if (res.Sucesso) {
+          this.price = res.Estadia;
         }
+      },
+      error: (res) => {
+        if (!res.Sucesso) {
+          console.log(res);
+        }
+      }
     })
   }
 
@@ -76,5 +78,11 @@ constructor(private router: Router, private ticketService: TicketService, privat
 
   paymentCurrentTicketNavegation() {
     this.router.navigate(['payment_current_ticket']);
+  }
+
+  searchPriceForMinute() {
+    setInterval(() => {
+      this.getPrice()
+    }, 60000);
   }
 }

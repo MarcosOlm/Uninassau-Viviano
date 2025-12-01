@@ -22,7 +22,7 @@
         display: flex;
         flex-direction: column;
         gap: .5rem;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     img {
@@ -59,7 +59,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .configuration {
@@ -102,8 +102,37 @@ a {
     width: 100%;
     padding: 1rem .6rem;
     border-radius: 10px;
+    font-size: 17px;
 }
 
-a:hover {
+li:hover {
     background-color: rgb(24, 41, 73, .3);
+    border-radius: 10px;
+    cursor: pointer;    
+}
+
+
+@media (max-width: 1280px) {
+    .user {
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            font-size: 12px;
+        }
+    }
+
+    .information {
+        .information-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 15px;
+        }
+    }
+
+    .configuration a {
+        font-size: 15px;
+    }
 }

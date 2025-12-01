@@ -1,10 +1,22 @@
 <div class="container">
+    @if (!historyTicket) {
+        <div class="ticket-wrap">
+            <div class="no-history">
+                <div class="wrap">
+                    <h1>Bem-vindo ao tickect</h1>
+                    <p>Você ainda não tem nenhum gasto registrado ou um ticket</p>
+                    <p>Solicite um ticket</p>
+                </div>
+                <button (click)="ticketSolicitationNavegation()">Solicite um ticket</button>
+            </div>
+        </div>
+    }
     <div class="ticket-wrap">
         @for (item of ticket; track $index) {
             <div class="tickect">
             <div class="location-value">
                 <h2>UNINASSAU</h2>
-                <h2>R$ 6,75</h2>
+                <h2>R$ {{item.ValorTicket}}</h2>
             </div>
             <div class="date-status">
                 <h3> {{item.DataPagamento}} </h3>

@@ -1,23 +1,23 @@
 <section>
     @if (!currentTicketExist) {
-        <div class="wrap">
-            <div class="status">
-                <h1>Ticket Atual</h1>
-            </div>
-            <div class="no-ticket">
-                <div class="no-current-ticket">
-                    <div>
-                        <img src="ticket-solid-full.svg" alt="">
-                    </div>
-                    <h1>Nenhum Ticket Ativo</h1>
-                    <p>Você não possui um ticket de estacionamento ativo no momento.</p>
-                    <button type="button" (click)="createTicket()">Gerar Novo Ticket</button>
+    <div class="wrap">
+        <div class="status">
+            <h1>Ticket Atual</h1>
+        </div>
+        <div class="no-ticket">
+            <div class="no-current-ticket">
+                <div>
+                    <img src="ticket-solid-full.svg" alt="">
                 </div>
+                <h1>Nenhum Ticket Ativo</h1>
+                <p>Você não possui um ticket de estacionamento ativo no momento.</p>
+                <button type="button" (click)="createTicket()">Gerar Novo Ticket</button>
             </div>
         </div>
+    </div>
     }
     @else {
-        <div class="content-ticket">
+    <div id="tickect" class="content-ticket">
         <div class="wrap">
             <div class="status">
                 <h1>Ticket Atual</h1>
@@ -50,7 +50,7 @@
         <div class="value">
             <div class="price">
                 <h2>Valor Atual</h2>
-                <h1> R$ {{ price}} </h1>
+                <h1> R$ {{ price }} </h1>
             </div>
             <p>ID: {{codeTicket}} </p>
         </div>

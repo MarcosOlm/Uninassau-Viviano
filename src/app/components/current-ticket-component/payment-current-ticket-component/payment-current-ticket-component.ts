@@ -25,6 +25,7 @@ export class PaymentCurrentTicketComponent implements OnInit{
 
   ngOnInit(): void {
     this.ticketVerification();
+    this.searchPriceForMinute();
   }
 
   onSubmit(): void {
@@ -89,5 +90,11 @@ export class PaymentCurrentTicketComponent implements OnInit{
     if(event == 0){
       this.carouselLength = false
     } 
+  }
+
+  searchPriceForMinute() {
+    setInterval(() => {
+      this.getPrice()
+    }, 60000);
   }
 }

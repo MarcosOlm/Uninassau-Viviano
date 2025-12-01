@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CardService } from '../../../services/card-service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { addBalanceCard } from '../../../interface/card';
+import { addBalanceCard, historyCard } from '../../../interface/card';
 
 @Component({
   selector: 'app-card-component',
@@ -15,8 +15,10 @@ export class CardComponent implements OnInit{
   form!: FormGroup;
   id!: number;
   balance!: number;
-  cardNumber!: number;
+  cardNumber!: string;
   cardType!: string;
+  historyCard: boolean = true;
+  historyTransactions: historyCard[] = [];
   
   constructor(private router: Router, 
     private route: ActivatedRoute, 
@@ -28,6 +30,7 @@ export class CardComponent implements OnInit{
     this.id = Number(this.route.snapshot.paramMap.get('id') || '');
     this.getCardInformation();
     this.setupForm();
+    this.getHistoryCard();
   }
 
   addValue(value: number) {
@@ -55,7 +58,7 @@ export class CardComponent implements OnInit{
     this.cardService.searchCard(this.id).subscribe({
       next: (card) => {
         this.balance = card.Saldo;
-        this.cardNumber = card.NumeroCard;
+        this.alterCardNumber(card.NumeroCard);
         this.cardType = card.Tipo;
       }
     });
@@ -63,5 +66,25 @@ export class CardComponent implements OnInit{
 
   homeNavegation() {
     this.router.navigate(['']);
+  }
+
+  alterCardNumber(cardNumber: number) {
+    this.cardNumber = cardNumber.toString().replace(/(.{4})/g, '$1 ').trim();
+  }
+
+  getHistoryCard() {
+    this.cardService.historyRecentCard(this.id).subscribe({
+      next: (res) => {
+        if (res.Sucesso && res.Registros[0] != null) {
+          this.historyTransactions = res.Registros;
+        }
+        else {
+          console.log(res.Resposta);
+        }
+        if (res.Registros[0] == null) {
+          this.historyCard = false;
+        }
+      }
+    })
   }
 }

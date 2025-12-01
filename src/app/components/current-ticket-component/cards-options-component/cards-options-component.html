@@ -1,11 +1,10 @@
 <div class="wrapper">
     @for (item of cards; track $index) {
-        <div class="cards" [class.premium]="item.Tipo == 'Premium'"
-        [class.estudante]="item.Tipo == 'Estudante'" [class.comum]="item.Tipo == 'Comum'"
-        [class.ativo]="item.Id == cardId" (click)="getIdCard(item.Id)">
-            <h1>Cartão {{item.Tipo}}</h1>
-            <h2>R$ {{item.Saldo}}</h2>
-            <h3>{{item.NumeroCard}}</h3>
-        </div>
+    <div class="cards" [class.premium]="item.Tipo == 'Premium'" [class.estudante]="item.Tipo == 'Estudante'"
+        [class.comum]="item.Tipo == 'Comum'" [class.ativo]="item.Id == cardId" (click)="getIdCard(item.Id)">
+        <h1>Cartão {{item.Tipo}}</h1>
+        <h2>R$ {{item.Saldo}}</h2>
+        <h3>**** **** **** {{item.NumeroCard.toString().slice(-4)}}</h3>
+    </div>
     }
 </div>
