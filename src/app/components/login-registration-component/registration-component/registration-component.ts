@@ -5,10 +5,11 @@ import { UserService } from '../../../services/user-service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth-service';
 import { CommonModule } from '@angular/common';
+import { OnlyNumbers } from '../../../directive/only-numbers';
 
 @Component({
   selector: 'app-registration-component',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, OnlyNumbers],
   templateUrl: './registration-component.html',
   styleUrl: './registration-component.css',
 })
@@ -43,11 +44,9 @@ export class RegistrationComponent implements OnInit{
   }
 
   validatorMatricula(input: FormControl) {
-    const value = input.value.toString() || '';
-    return value.length != 0
-    && (value.length < 4
-    || value.length > 4)
-    ? {matricula: true} : null
+    const value = (input.value ?? '').toString();
+    if (value.length === 0) return null;
+    return value.length !== 4 ? { matricula: true } : null;
   }
 
   onSubmit() {

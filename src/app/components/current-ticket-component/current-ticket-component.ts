@@ -11,9 +11,10 @@ import { allTicketResponse, currentTicketResponse, ticketGenereteResponse, ticke
   styleUrl: './current-ticket-component.css'
 })
 export class CurrentTicketComponent implements OnInit {
-  timeNow = new Date();
+  
   currentTicketExist: boolean = false;
-  date!: string | null;
+  date!: string
+  hour!: string | null;
   codeTicket!: number | null;
   price!: number | null;
 
@@ -33,7 +34,8 @@ export class CurrentTicketComponent implements OnInit {
       next: (res) => {
         if (res.Ativo) {
           this.currentTicketExist = true;
-          this.date = res.EmissaoTimeStamp;
+          this.date = res.DataEntrada;
+          this.hour = res.EmissaoTimeStamp;
           this.codeTicket = res.CodigoTicket;
           this.getPrice();
         }

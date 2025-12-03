@@ -18,7 +18,7 @@ export class PaymentCurrentTicketComponent implements OnInit{
   date!: string | null;
   codeTicket!: number | null;
   price!: number | null;
-  paymentMethod: string = 'PIX';
+  paymentMethod: string = '';
   idCard!: number;
 
   constructor(private router: Router, private ticketService: TicketService, private auth: AuthService) {}
@@ -30,7 +30,8 @@ export class PaymentCurrentTicketComponent implements OnInit{
 
   onSubmit(): void {
     let payment = {IdCard: this.idCard, CodigoTicket: this.codeTicket, FormaPagamento: this.paymentMethod} as ticketPayment;
-    this.ticketService.ticketPayment(payment).subscribe({
+    if (this.paymentMethod != '') {
+      this.ticketService.ticketPayment(payment).subscribe({
       next: (res) => {
         if (res.Sucesso) {
           this.router.navigate(['/']);
@@ -40,6 +41,7 @@ export class PaymentCurrentTicketComponent implements OnInit{
         }
       }
     });
+    }
   }
 
   ticketVerification() {

@@ -9,6 +9,7 @@ export interface currentTicketResponse {
     Ativo: boolean,
     CodigoTicket: number | null,
     EmissaoTimeStamp: string | null,
+    DataEntrada: string,
     Sucesso: boolean
 }
 
